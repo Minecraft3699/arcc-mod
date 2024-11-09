@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IMI",
+    "APA",
+    "PPP"
+  ],
+  "key":{
+    "I": {"item": "minecraft:iron_ingot"},
+    "M": {"item": "computercraft:wireless_modem_normal"},
+    "A": {"item": "computercraft:monitor_advanced"},
+    "P": {"item": "minecraft:green_stained_glass_pane"}
+  },
+  "result" : {
+    "item": "arcc:ar_goggles",
+    "count": 1
+  }
+}

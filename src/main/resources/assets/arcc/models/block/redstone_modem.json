@@ -1,0 +1,11 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "arcc:block/redstone_modem_bottom",
+    "up": "arcc:block/redstone_modem_top",
+    "north": "arcc:block/redstone_modem_front",
+    "south": "arcc:block/redstone_modem_back",
+    "east": "arcc:block/redstone_modem_right",
+    "west": "arcc:block/redstone_modem_left"
+  }
+}

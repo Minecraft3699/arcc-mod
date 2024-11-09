@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "IPI",
+    "IMI"
+  ],
+  "key":{
+    "I": {"item": "minecraft:iron_ingot"},
+    "M": {"item": "computercraft:wireless_modem_normal"},
+    "P": {"item": "minecraft:glass_pane"}
+  },
+  "result" : {
+    "item": "arcc:pager",
+    "count": 1
+  }
+}

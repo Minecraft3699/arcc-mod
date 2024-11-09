@@ -1,0 +1,10 @@
+{
+  "item.arcc.ar_goggles": "Augmented Reality Goggles",
+  "item.arcc.zip_disk": "Zip Disk",
+  "item.arcc.pager": "Pager",
+  "item.arcc.tracking_arrow": "Tracking Arrow",
+
+
+  "block.arcc.ar_controller": "AR Controller",
+  "block.arcc.ar_terminal": "AR Terminal (NYI)"
+}

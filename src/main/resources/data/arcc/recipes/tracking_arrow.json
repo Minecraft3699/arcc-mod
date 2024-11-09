@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " MR",
+    "FIG",
+    "IF "
+  ],
+  "key":{
+    "R": {"item": "minecraft:redstone"},
+    "I": {"item": "minecraft:iron_ingot"},
+    "G": {"item": "minecraft:gunpowder"},
+    "M": {"item": "computercraft:wireless_modem_normal"},
+    "F": {"item": "minecraft:feather"}
+  },
+  "result" : {
+    "item": "arcc:tracking_arrow",
+    "count": 4
+  }
+}

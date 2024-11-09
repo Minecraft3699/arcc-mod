@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "arcc:block/redstone_modem",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "arcc:block/redstone_modem",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "arcc:block/redstone_modem"
+    },
+    "facing=south": {
+      "model": "arcc:block/redstone_modem",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "arcc:block/redstone_modem",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "arcc:block/redstone_modem",
+      "y": 270
+    }
+  }
+}
