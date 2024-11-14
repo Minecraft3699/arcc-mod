@@ -51,6 +51,7 @@ public class ModNetworking {
         INSTANCE_CHANNEL.registerMessage(2, RemoteBlockClickPacket.class, RemoteBlockClickPacket::encode,RemoteBlockClickPacket::decode, RemoteBlockClickPacket::handle);
         INSTANCE_CHANNEL.registerMessage(3, OpenComputerGuiPacket.class, OpenComputerGuiPacket::encode, OpenComputerGuiPacket::decode, OpenComputerGuiPacket::handle);
         INSTANCE_CHANNEL.registerMessage(4, PagerButtonPressPacket.class, PagerButtonPressPacket::encode, PagerButtonPressPacket::decode, PagerButtonPressPacket::handle);
+        INSTANCE_CHANNEL.registerMessage(5, SpawnChipItemPacket.class, SpawnChipItemPacket::encode, SpawnChipItemPacket::decode, SpawnChipItemPacket::handle);
     }
 
     // Method to send a text packet to the player

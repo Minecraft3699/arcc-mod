@@ -1,9 +1,12 @@
 package net.mc3699.arcc.gui;
 
+import dan200.computercraft.shared.platform.NetworkHandler;
 import net.mc3699.arcc.arcc;
 import net.mc3699.arcc.item.ChipProgrammerItem;
 import net.mc3699.arcc.item.EntityChipItem;
 import net.mc3699.arcc.item.ModItems;
+import net.mc3699.arcc.network.ModNetworking;
+import net.mc3699.arcc.network.SpawnChipItemPacket;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
@@ -13,6 +16,7 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -92,23 +96,16 @@ public class ChipProgrammerGUI extends Screen {
 
 
     private void handleWriteButton(Button button) {
-        if(player.getItemInHand(InteractionHand.MAIN_HAND).getItem() instanceof ChipProgrammerItem)
+        if(player.getItemInHand(InteractionHand.MAIN_HAND).getItem() instanceof ChipProgrammerItem programmerItem)
         {
 
             if(individualInputID != null && groupInputID != null)
             {
-                ItemStack newChipItem = new ItemStack(ModItems.ENTITY_CHIP.get(), 1);
-                newChipItem.getOrCreateTag().putString("controlChipGroup", this.groupInputID);
-                newChipItem.getOrCreateTag().putString("controlChipMember", this.individualInputID);
-
+                ModNetworking.INSTANCE_CHANNEL.sendToServer(new SpawnChipItemPacket(groupInputID,individualInputID));
                 this.onClose();
-                player.getItemInHand(InteractionHand.MAIN_HAND).shrink(1);
-                player.addItem(newChipItem);
             } else {
                 player.level().playSound(null, player.getX(),player.getY(),player.getZ(), SoundEvents.NOTE_BLOCK_COW_BELL.get(), SoundSource.PLAYERS, 1, 1);
             }
-
-
         }
     }
 
