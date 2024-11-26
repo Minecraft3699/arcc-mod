@@ -44,6 +44,11 @@ public class ModPeripheralProviders implements IPeripheralProvider {
             return  LazyOptional.of( () -> ((EntityControllerBlockEntity) blockEntity).getPeripheral());
         }
 
+        if(blockEntity instanceof HUDBlockEntity)
+        {
+            return LazyOptional.of(() -> ((HUDBlockEntity) blockEntity).getPeripheral());
+        }
+
 
         return LazyOptional.empty();
     }

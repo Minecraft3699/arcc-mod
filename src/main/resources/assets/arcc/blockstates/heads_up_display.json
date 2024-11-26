@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "arcc:block/heads_up_display",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "arcc:block/heads_up_display",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "arcc:block/heads_up_display"
+    },
+    "facing=south": {
+      "model": "arcc:block/heads_up_display",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "arcc:block/heads_up_display",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "arcc:block/heads_up_display",
+      "y": 270
+    }
+  }
+}

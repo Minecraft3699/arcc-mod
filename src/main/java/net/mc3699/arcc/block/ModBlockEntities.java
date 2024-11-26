@@ -3,7 +3,9 @@ package net.mc3699.arcc.block;
 import net.mc3699.arcc.arcc;
 import net.mc3699.arcc.block.entity.*;
 import net.mc3699.arcc.block.special.CellularAPBlock;
+import net.mc3699.arcc.block.special.HUDBlock;
 import net.mc3699.arcc.peripheral.ARControllerPeripheral;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -32,4 +34,7 @@ public class ModBlockEntities {
     public static RegistryObject<BlockEntityType<EntityControllerBlockEntity>> ENTITY_CONTROLLER_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("entity_controller_block_entity",
                     () -> BlockEntityType.Builder.of(EntityControllerBlockEntity::new, ModBlocks.ENTITY_CONTROLLER.get()).build(null));
+
+    public static RegistryObject<BlockEntityType<HUDBlockEntity>> HUD_BLOCK_ENIITY =
+            BLOCK_ENTITIES.register("hud_block_entity", () -> BlockEntityType.Builder.of(HUDBlockEntity::new, ModBlocks.HEADS_UP_DISPLAY.get()).build(null));
 }

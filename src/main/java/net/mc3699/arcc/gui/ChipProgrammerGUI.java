@@ -96,9 +96,8 @@ public class ChipProgrammerGUI extends Screen {
 
 
     private void handleWriteButton(Button button) {
-        if(player.getItemInHand(InteractionHand.MAIN_HAND).getItem() instanceof ChipProgrammerItem programmerItem)
+        if(player.getItemInHand(InteractionHand.MAIN_HAND).getItem() instanceof ChipProgrammerItem)
         {
-
             if(individualInputID != null && groupInputID != null)
             {
                 ModNetworking.INSTANCE_CHANNEL.sendToServer(new SpawnChipItemPacket(groupInputID,individualInputID));
