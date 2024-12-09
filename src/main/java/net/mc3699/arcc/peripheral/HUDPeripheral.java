@@ -26,13 +26,13 @@ public class HUDPeripheral implements IPeripheral {
     @LuaFunction
     public void addText(String text, double x, double y, int color)
     {
-        blockEntity.addTextElement(text, (float) x, (float) y, color);
+        this.blockEntity.addTextElement(text, (float) x, (float) y, color);
     }
 
     @LuaFunction
     public void clear()
     {
-        blockEntity.clearElements();
+        this.blockEntity.clearElements();
     }
 
 }

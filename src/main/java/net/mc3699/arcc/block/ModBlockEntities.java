@@ -37,4 +37,7 @@ public class ModBlockEntities {
 
     public static RegistryObject<BlockEntityType<HUDBlockEntity>> HUD_BLOCK_ENIITY =
             BLOCK_ENTITIES.register("hud_block_entity", () -> BlockEntityType.Builder.of(HUDBlockEntity::new, ModBlocks.HEADS_UP_DISPLAY.get()).build(null));
+
+    public static RegistryObject<BlockEntityType<CameraBlockEntity>> CAMERA_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("camera_block_entity", () -> BlockEntityType.Builder.of(CameraBlockEntity::new, ModBlocks.CAMERA_BLOCK.get()).build(null));
 }

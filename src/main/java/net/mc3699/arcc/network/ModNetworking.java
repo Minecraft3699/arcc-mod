@@ -3,6 +3,7 @@ package net.mc3699.arcc.network;
 import net.mc3699.arcc.network.TextElement;
 import net.mc3699.arcc.overlay.AugmentedHudOverlay;
 import net.minecraft.client.Minecraft;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -52,6 +53,12 @@ public class ModNetworking {
         INSTANCE_CHANNEL.registerMessage(3, OpenComputerGuiPacket.class, OpenComputerGuiPacket::encode, OpenComputerGuiPacket::decode, OpenComputerGuiPacket::handle);
         INSTANCE_CHANNEL.registerMessage(4, PagerButtonPressPacket.class, PagerButtonPressPacket::encode, PagerButtonPressPacket::decode, PagerButtonPressPacket::handle);
         INSTANCE_CHANNEL.registerMessage(5, SpawnChipItemPacket.class, SpawnChipItemPacket::encode, SpawnChipItemPacket::decode, SpawnChipItemPacket::handle);
+    }
+
+
+    public void openComputerGUI(BlockPos pos)
+    {
+        INSTANCE_CHANNEL.sendToServer(new OpenComputerGuiPacket(pos));
     }
 
     // Method to send a text packet to the player

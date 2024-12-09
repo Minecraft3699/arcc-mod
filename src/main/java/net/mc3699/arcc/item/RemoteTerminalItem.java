@@ -49,10 +49,9 @@ public class RemoteTerminalItem extends Item {
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
 
 
-        if(pStack.hasTag())
-        {
+        if (pStack.hasTag()) {
             int computerID = pStack.getTag().getInt("computer_id");
-            pTooltipComponents.add(Component.literal("§6Controlling: "+computerID));
+            pTooltipComponents.add(Component.literal("§6Controlling: " + computerID));
             pTooltipComponents.add(Component.literal("§7Right click an [Advanced Computer] to link!"));
         } else {
             pTooltipComponents.add(Component.literal("§6No computer linked"));
@@ -68,11 +67,10 @@ public class RemoteTerminalItem extends Item {
         BlockPos clickedBlock = pContext.getClickedPos();
         ItemStack heldItem = pContext.getItemInHand();
 
-        if(pContext.getLevel().getBlockEntity(clickedBlock) instanceof ComputerBlockEntity)
-        {
+        if (pContext.getLevel().getBlockEntity(clickedBlock) instanceof ComputerBlockEntity) {
             ComputerBlockEntity clickedComputer = (ComputerBlockEntity) pContext.getLevel().getBlockEntity(clickedBlock);
             int clickedComputerID = clickedComputer.getComputerID();
-            Minecraft.getInstance().player.sendSystemMessage(Component.literal("Computer ID: "+clickedComputerID));
+            Minecraft.getInstance().player.sendSystemMessage(Component.literal("Computer ID: " + clickedComputerID));
             heldItem.getOrCreateTag().putInt("computer_id", clickedComputerID);
 
             heldItem.getOrCreateTag().putInt("computer_x", clickedBlock.getX());
@@ -87,6 +85,7 @@ public class RemoteTerminalItem extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
+        /*
         if(!pLevel.isClientSide())
         {
             ItemStack heldItem = pPlayer.getItemInHand(pUsedHand);
@@ -103,6 +102,18 @@ public class RemoteTerminalItem extends Item {
 
             ItemStack termItem = new ItemStack(ModItems.REMOTE_TERMINAL.get(), 1);
             (new ComputerContainerData(serverComputer, termItem)).open(pPlayer, targetComputer);
+            return InteractionResultHolder.sidedSuccess(pPlayer.getItemInHand(pUsedHand), true);
+        }
+        return super.use(pLevel, pPlayer, pUsedHand);
+    }
+    */
+        ItemStack heldItem = pPlayer.getItemInHand(pUsedHand);
+        if (pLevel.isClientSide()) {
+            int computerX = heldItem.getOrCreateTag().getInt("computer_x");
+            int computerY = heldItem.getOrCreateTag().getInt("computer_y");
+            int computerZ = heldItem.getOrCreateTag().getInt("computer_z");
+            BlockPos computerPos = new BlockPos(computerX,computerY,computerZ);
+            ModNetworking.getInstance().openComputerGUI(computerPos);
             return InteractionResultHolder.sidedSuccess(pPlayer.getItemInHand(pUsedHand), true);
         }
         return super.use(pLevel, pPlayer, pUsedHand);
