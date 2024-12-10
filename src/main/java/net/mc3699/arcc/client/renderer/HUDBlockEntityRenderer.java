@@ -47,9 +47,6 @@ public class HUDBlockEntityRenderer implements BlockEntityRenderer<HUDBlockEntit
 
         pPoseStack.pushPose();
         pPoseStack.translate(0.5, 0.65, 0.5);
-
-
-
         Direction dir = pBlockEntity.getBlockState().getValue(HUDBlock.FACING);
         pPoseStack.mulPose(Axis.ZP.rotationDegrees(-180));
 
