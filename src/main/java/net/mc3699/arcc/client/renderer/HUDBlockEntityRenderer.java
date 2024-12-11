@@ -38,7 +38,7 @@ public class HUDBlockEntityRenderer implements BlockEntityRenderer<HUDBlockEntit
                 pBuffer,
                 Font.DisplayMode.NORMAL,
                 0x00AA00,
-                pPackedLight
+                0xF000F0
         );
     }
 

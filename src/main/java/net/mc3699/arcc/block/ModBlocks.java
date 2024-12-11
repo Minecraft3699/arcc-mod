@@ -41,6 +41,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> HEADS_UP_DISPLAY = registerBlock("heads_up_display",
             () -> new HUDBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
 
+    public static final RegistryObject<Block> CAMERA = registerBlock("camera",
+            () -> new CameraBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
+
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));

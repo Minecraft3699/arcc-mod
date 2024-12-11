@@ -35,6 +35,10 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("entity_controller_block_entity",
                     () -> BlockEntityType.Builder.of(EntityControllerBlockEntity::new, ModBlocks.ENTITY_CONTROLLER.get()).build(null));
 
+    public static RegistryObject<BlockEntityType<CameraBlockEntity>> CAMERA_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("camera_block_entity",
+                    () -> BlockEntityType.Builder.of(CameraBlockEntity::new, ModBlocks.CAMERA.get()).build(null));
+
     public static RegistryObject<BlockEntityType<HUDBlockEntity>> HUD_BLOCK_ENIITY =
             BLOCK_ENTITIES.register("hud_block_entity", () -> BlockEntityType.Builder.of(HUDBlockEntity::new, ModBlocks.HEADS_UP_DISPLAY.get()).build(null));
 }
